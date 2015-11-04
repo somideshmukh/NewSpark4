@@ -246,8 +246,8 @@ final class DataFrameWriter private[sql](df: DataFrame) {
         val sql = s"CREATE TABLE $table ($schema)"
 
 
-       //ujava code
-        conn.prepareStatement(sql).executeUpdate()
+        //changed preparedstatement to statement
+        conn.createStatement.executeUpdate(sql)
       }
     } finally {
       conn.close()
