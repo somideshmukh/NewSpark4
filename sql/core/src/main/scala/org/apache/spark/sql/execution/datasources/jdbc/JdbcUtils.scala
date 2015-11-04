@@ -57,7 +57,7 @@ object JdbcUtils extends Logging {
   def dropTable(conn: Connection, table: String): Unit = {
 
 
-
+   //java code1
     conn.prepareStatement(s"DROP TABLE $table").executeUpdate()
 
   }
