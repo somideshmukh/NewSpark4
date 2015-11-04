@@ -247,7 +247,7 @@ final class DataFrameWriter private[sql](df: DataFrame) {
 
 
 
-        conn.createStatement.executeUpdate(sql)
+        conn.prepareStatement(sql).executeUpdate()
       }
     } finally {
       conn.close()

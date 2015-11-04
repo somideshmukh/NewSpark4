@@ -58,7 +58,7 @@ object JdbcUtils extends Logging {
 
 
 
-    conn.createStatement.executeUpdate(s"DROP TABLE $table")
+    conn.prepareStatement(s"DROP TABLE $table").executeUpdate()
 
   }
 
